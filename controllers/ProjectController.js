@@ -36,8 +36,7 @@ export const remove = async (req, res) => {
 
 export const getAll = async (_, res) => {
   try {
-    const projects = await Project.find().populate('tasks')
-    console.log(projects)
+    const projects = await Project.find()
     res.status(200).json({ projects })
   } catch (err) {
     console.log(err)

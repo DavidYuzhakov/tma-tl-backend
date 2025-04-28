@@ -6,5 +6,6 @@ const router = Router()
 router.get('/:projectId', TaskController.getAll)
 router.post('/:projectId', TaskController.create)
 router.delete('/:taskId', TaskController.remove)
+router.patch('/:taskId', TaskController.update)
 
 export default router
