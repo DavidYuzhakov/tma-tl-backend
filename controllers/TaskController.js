@@ -38,11 +38,27 @@ export const remove = async (req, res) => {
         message: 'The task is not found',
       })
     }
-    res.status(200).json({
-      message: 'The task was successfully deleted ',
-    })
+    res.status(200).json({ success: true })
   } catch (err) {
     console.log(err)
     res.status(500).json({ message: 'Failed to remove task' })
+  }
+}
+
+export const update = async (req, res) => {
+  try {
+    const taskId = req.params.taskId
+    await Task.findByIdAndUpdate(taskId, {
+      name: req.body.name,
+      date: req.body.date,
+      priority: req.body.priority,
+      isCompleted: req.body.isCompleted,
+    })
+    res.status(200).json({ success: true })
+  } catch (err) {
+    console.log(err)
+    res.status(500).json({
+      message: 'Failed to update task',
+    })
   }
 }

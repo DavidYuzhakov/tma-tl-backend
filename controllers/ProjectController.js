@@ -27,9 +27,7 @@ export const remove = async (req, res) => {
         message: 'The project is not found',
       })
     }
-    res.status(200).json({
-      message: 'The project was successfully deleted ',
-    })
+    res.status(200).json({ success: true })
   } catch (err) {
     console.log(err)
     res.status(500).json({ message: 'Failed to remove project' })
