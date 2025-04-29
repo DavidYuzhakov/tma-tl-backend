@@ -20,7 +20,6 @@ export const create = async (req, res) => {
 export const remove = async (req, res) => {
   try {
     const projectId = req.params.projectId
-    console.log('42', projectId)
     const deletedProject = await Project.findOneAndDelete(projectId)
     if (!deletedProject) {
       res.status(404).json({
