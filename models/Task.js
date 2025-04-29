@@ -11,9 +11,14 @@ const schema = Schema({
     required: true,
   },
   date: {
-    type: Date,
+    type: String,
     required: true,
-    default: Date.now(),
+    default: new Date().toLocaleDateString(),
+  },
+  time: {
+    type: String,
+    required: true,
+    default: '09:00',
   },
   priority: {
     type: String,

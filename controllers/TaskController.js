@@ -51,6 +51,7 @@ export const update = async (req, res) => {
     await Task.findByIdAndUpdate(taskId, {
       name: req.body.name,
       date: req.body.date,
+      time: req.body.time,
       priority: req.body.priority,
       isCompleted: req.body.isCompleted,
     })
