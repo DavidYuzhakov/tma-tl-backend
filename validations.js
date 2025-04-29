@@ -1,10 +1,9 @@
 import { body } from 'express-validator'
 
 export const taskValidation = [
-  body(
-    'name',
-    'The name must be a min of 2 characters and a max of 30'
-  ).isLength({ min: 2, max: 30 }),
+  body('name', 'The name must be a min of 2 characters and a max of 30')
+    .isLength({ min: 2, max: 30 })
+    .optional(),
 ]
 
 export const projectValidation = [
